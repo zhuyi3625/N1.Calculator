@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int a,b;
+	int block = 1;//判断是否继续循环的条件
+	char c;
+	while (block==1)
+	{
+		cout << "Welcome to use my calculator" << endl;
+		cout << "PLease enter your symbol:";
+		cin >> c;
+		while (block != 0)
+		{
+			if (c == '+' || c == '-' || c == '*' || c == '/')
+			{
+				block = 0;
+			}
+			else
+			{
+				cout << "Error!" << endl << "PLease enter a symbel again:";
+				cin >> c;
+			}
+		}
+
+		cout << "Then enter your number:";
+		cin >> a >> b;
+
+		switch (c)
+		{
+		case '+':cout << "result is:" << (double)a + b << endl; break;
+		case '-':cout << "result is:" << (double)a - b << endl; break;
+		case '*':cout << "result is:" << (double)a * b << endl; break;
+		case '/':cout << "result is:" << (double)a / b << endl; break;
+		}
+
+		while (block != 1)
+		{
+			cout << "end:enter 2  or  continue:enter 3" << endl;
+			cin >> block;
+			if (block == 2)
+			{
+				system("cls");//清屏
+				break;
+			}
+			else if (block == 3)
+			{
+				system("cls");
+				block = 1;
+			}
+			else
+			{
+				cout << "Error!" << endl << "Wrong input!" << endl;
+				block = 4;
+			}
+		}
+	}
+
+	cout << "Dacvidania!" << endl;
+	return 0;
+}
